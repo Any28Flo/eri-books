@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import firebaseConfig from './firebase-config.js';
+import { FirebaseAppProvider } from 'reactfire';
+
 
 ReactDOM.render(
+  <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+
+  </React.StrictMode>
+  </FirebaseAppProvider>,
   document.getElementById('root')
 );
 
