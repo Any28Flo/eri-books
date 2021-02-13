@@ -5,15 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import firebaseConfig from './firebase-config.js';
 import { FirebaseAppProvider } from 'reactfire';
-
+import Spinner from './components/utils/Spiner/Spinner'
 
 ReactDOM.render(
   <FirebaseAppProvider firebaseConfig={firebaseConfig}>
 
-  <React.StrictMode>
+  <Suspense fallback={ <Spinner/>   }>
     <App />
 
-  </React.StrictMode>
+  </Suspense>
   </FirebaseAppProvider>,
   document.getElementById('root')
 );
